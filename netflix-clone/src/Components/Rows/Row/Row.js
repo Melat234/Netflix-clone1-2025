@@ -17,10 +17,10 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         console.log(request);
         setMovies(request.data.results);
       } catch (error) {
-        console.error("error", error);
+        console.error( error);
       }
     })();
-  }, [fetchUrl]); // dependecy url
+  }, [fetchUrl]); 
 
   const handleClick = (movie) => {
     if (trailerUrl) {
@@ -30,8 +30,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         (url) => {
           console.log(url);
           const urlParams = new URLSearchParams(new URL(url).search);
-          console.log(urlParams);
-          console.log(urlParams.get("v"));
+          // console.log(urlParams);
+          // console.log(urlParams.get("v"));
           setTrailerUrl(urlParams.get("v"));
         }
       );
